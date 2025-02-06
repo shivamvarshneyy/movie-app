@@ -1,0 +1,102 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.heading {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.movieSearchContainer {
+  width: 60%;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.searchBar {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.loadingSpinner {
+  margin-top: 20px;
+}
+
+.errorMessage {
+  color: red;
+}
+
+.movieList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.movieItem {
+  width: 200px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.movieImg {
+  object-fit: cover;
+  width: 100%;
+  height: 200px;
+  border-radius: 5px;
+}
+
+.movieDetails {
+  padding: 10px;
+  text-align: left;
+}
+
+.movieTitle{
+  font-size: 18px;
+  font-weight: bold;
+  color: #222;
+}
+
+.movieText{
+  margin: 10px 0 0 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 180px;
+}
+
+.pagination {
+  margin-top: 20px;
+}
+
+.pagination button {
+  padding: 5px 10px;
+  margin: 0 5px;
+  cursor: pointer;
+  border: none;
+  background-color: #ccc;
+  border-radius: 5px;
+}
+
+.pagination button.active {
+  background-color: #007bff;
+  color: white;
+}
+
+.pagination button:hover {
+  background-color: #0056b3;
+  color: white;
+}
+
