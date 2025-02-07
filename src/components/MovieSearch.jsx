@@ -12,6 +12,8 @@ const MovieSearch = () => {
   useEffect(() => {
     if (query) {
       dispatch(fetchMovies(query, currentPage));
+    } else {
+      dispatch(fetchMovies('a', currentPage));
     }
   }, [query, currentPage, dispatch]);
 
@@ -55,17 +57,28 @@ const MovieSearch = () => {
       )}
       {error && <div className="errorMessage">{error}</div>}
       <div className="movieList">{renderMovies()}</div>
+      
       {totalPages > 1 && (
         <div className="pagination">
-          {[...Array(totalPages)].map((_, index) => (
-            <button
-              key={index}
-              onClick={() => handlePageChange(index + 1)}
-              className={currentPage === index + 1 ? "active" : ""}
-            >
-              {index + 1}
-            </button>
-          ))}
+          <button
+            onClick={() => handlePageChange(currentPage - 1)}
+            disabled={currentPage === 1}
+            className={currentPage === 1 ? "disabled" : ""}
+          >
+            Prev
+          </button>
+
+          <span>
+            {currentPage} / {totalPages}
+          </span>
+
+          <button
+            onClick={() => handlePageChange(currentPage + 1)}
+            disabled={currentPage === totalPages}
+            className={currentPage === totalPages ? "disabled" : ""}
+          >
+            Next
+          </button>
         </div>
       )}
     </div>
